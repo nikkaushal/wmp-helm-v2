@@ -14,7 +14,6 @@ spec:
       labels:
         appName: {{ .Values.appName }}
     spec:
-      serviceAccountName: {{ .Values.appName }}
       volumes:
       - name: params
         emptyDir: {}
