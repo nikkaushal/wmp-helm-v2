@@ -7,3 +7,4 @@ RUN dnf install unzip -y && \
     ./aws/install -i && \
     rm -rf awscliv2.zip .\aws && \
     dnf remove unzip -y && \
+    dnf clean all
