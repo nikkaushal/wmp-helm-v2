@@ -20,7 +20,7 @@ spec:
         emptyDir: {}
       initContainers:
       - name: ssm-pull
-        image: 293222827824.dkr.ecr.us-east-1.amazonaws.com/aws-ssm:latest  
+        image: 293222827824.dkr.ecr.us-east-1.amazonaws.com/ssm-pull:latest  
         imagePullPolicy: Always
         env:
         - name: PARAMS
