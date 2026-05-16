@@ -14,7 +14,26 @@ spec:
       labels:
         appName: {{ .Values.appName }}
     spec:
+      serviceAccountName: {{ .Values.appName }}
+      volumes:
+      - name: params
+        emptyDir: {}
+      initContainers:
+      - name: ssm-pull
+        image: 293222827824.dkr.ecr.us-east-1.amazonaws.com/aws-ssm:latest  
+        imagePullPolicy: Always
+        env:
+        - name: PARAMS
+          value: "{{ .Values.PARAMS }}"
+        - name: SERVICE_NAME
+          value: {{ .Values.appName }}
+        volumeMounts:
+        - name: params
+          mountPath: /data
       containers:
       - name: {{ .Values.appName }}
         image: 293222827824.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.appName }}:{{ .Values.image_tag }}
+        volumeMounts:
+        - name: params
+          mountPath: /data        
 

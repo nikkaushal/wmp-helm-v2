@@ -6,3 +6,5 @@ config_values:
   DB_SCHEMA: "analytics_schema"
   LOG_LEVEL: "INFO"
   ENVIRONMENT: "production"
+
+PARAMS: "DATABASE_URL DB_SCHEMA LOG_LEVEL ENVIRONMENT"
