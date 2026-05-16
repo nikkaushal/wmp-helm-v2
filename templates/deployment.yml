@@ -23,10 +23,10 @@ spec:
         image: 293222827824.dkr.ecr.us-east-1.amazonaws.com/ssm-pull:latest  
         imagePullPolicy: Always
         env:
-        - name: PARAMS
-          value: "{{ .Values.PARAMS }}"
-        - name: SERVICE_NAME
-          value: {{ .Values.appName }}
+          - name: PARAMS
+            value: {{ .Values.PARAMS }}
+          - name: SERVICE_NAME
+            value: {{ .Values.appName }}
         volumeMounts:
         - name: params
           mountPath: /data
