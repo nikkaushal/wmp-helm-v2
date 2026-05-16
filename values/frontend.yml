@@ -1,0 +1,8 @@
+appName: frontend 
+appPort: 80
+serviceType: ClusterIP #use to be LoadBalancer type but since we are using ingress, we can use ClusterIP
+config_values:
+  test: test
+
+ingress:
+  enabled: true
