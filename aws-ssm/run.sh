@@ -1,1 +1,1 @@
-aws ssm get-parameter --name "my-parameter" --with-decryption
+aws ssm get-parameter --name "/analytics-service/DATABASE_URL" --region us-east-1
